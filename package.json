@@ -1,0 +1,24 @@
+{
+  "name": "claude-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bunx wrangler dev --port 8787",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "bunx wrangler d1 migrations apply claude-gateway --local",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.9.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250915.0",
+    "@types/node": "^22.10.0",
+    "drizzle-kit": "^0.31.0",
+    "drizzle-orm": "^0.44.0",
+    "typescript": "^5.7.0",
+    "wrangler": "^4.0.0"
+  }
+}
